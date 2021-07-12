@@ -9,13 +9,17 @@
 <body>
     
     
+
     <ul>
         @foreach ($links as $link)
-        <li>
+            <li>
+                @if ($loop->first)
+                    <a href="{{ url('/') }}"> {{ $link }}</a>
+                @else
+                    <a href="/{{ $link }}"> {{ $link }} </a>
+                @endif
             
-            <a href="/{{ $link }}"> {{ $link }} </a>
-            
-        </li>
+            </li>
         @endforeach
     </ul>
    

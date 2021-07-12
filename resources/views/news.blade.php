@@ -7,12 +7,16 @@
         <title>news</title>
     </head>
     <body>
+
         <ul>
             @foreach ($links as $link)
                 <li>
-                   
-                    <a href="/{{ $link }}"> {{ $link }} </a>
-                   
+                    @if ($loop->first)
+                        <a href="{{ url('/') }}"> {{ $link }}</a>
+                    @else
+                        <a href="/{{ $link }}"> {{ $link }} </a>
+                    @endif
+                
                 </li>
             @endforeach
         </ul>

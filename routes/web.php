@@ -14,10 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    $msgArr = [
-        "msg" => "Hello world",
-        "page" => "HOME"
-    ];
+
     $navLinks = [
         "links" => [
             "home",
@@ -26,7 +23,20 @@ Route::get('/', function () {
             "news"
         ]
     ];
-    return view('home', $msgArr, $navLinks );
+    return view('home', $navLinks );
+});
+
+Route::get('/home', function () {
+
+    $navLinks = [
+        "links" => [
+            "home",
+            "contacts",
+            "services",
+            "news"
+        ]
+    ];
+    return view('home', $navLinks );
 });
 
 Route::get('/contacts', function () {

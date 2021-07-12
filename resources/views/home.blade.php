@@ -13,18 +13,16 @@
                 @foreach ($links as $link)
                     <li>
                         @if ($loop->first)
-                            <a href="{{ url('/Home') }}">
+                            <a href="{{ url('/') }}"> {{ $link }}</a>
+                        @else
+                            <a href="/{{ $link }}"> {{ $link }} </a>
                         @endif
-                        <a href="/{{ $link }}"> {{ $link }} </a>
-                        @if ($loop->first)
-                            </a>
-                        @endif
+                    
                     </li>
                 @endforeach
             </ul>
 
-            <h1> {{ $page }} </h1>
-            <h1> {{ $msg }} </h1>
+      
 
 
         </div>
