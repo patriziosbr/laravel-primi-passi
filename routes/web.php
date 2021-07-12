@@ -18,9 +18,49 @@ Route::get('/', function () {
         "msg" => "Hello world",
         "page" => "HOME"
     ];
-    return view('home', $msgArr );
+    $navLinks = [
+        "links" => [
+            "home",
+            "contacts",
+            "services",
+            "news"
+        ]
+    ];
+    return view('home', $msgArr, $navLinks );
 });
 
-Route::get('/chi-siamo', function () {
-    return view('chi-siamo');
+Route::get('/contacts', function () {
+    $navLinks = [
+        "links" => [
+            "home",
+            "contacts",
+            "services",
+            "news"
+        ]
+    ];
+    return view('contacts', $navLinks);
+});
+
+Route::get('/services', function () {
+    $navLinks = [
+        "links" => [
+            "home",
+            "contacts",
+            "services",
+            "news"
+        ]
+    ];
+    return view('services', $navLinks);
+});
+
+Route::get('/news', function () {
+    $navLinks = [
+        "links" => [
+            "home",
+            "contacts",
+            "services",
+            "news"
+        ]
+    ];
+    return view('news', $navLinks);
 });

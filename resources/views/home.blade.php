@@ -9,8 +9,22 @@
     <body>
         <div class="container">
 
-            <h1> {{$msg}} </h1>
-            <h1> {{ $msgArr->[1] }} </h1>
+            <ul>
+                @foreach ($links as $link)
+                    <li>
+                        @if ($loop->first)
+                            <a href="{{ url('/Home') }}">
+                        @endif
+                        <a href="/{{ $link }}"> {{ $link }} </a>
+                        @if ($loop->first)
+                            </a>
+                        @endif
+                    </li>
+                @endforeach
+            </ul>
+
+            <h1> {{ $page }} </h1>
+            <h1> {{ $msg }} </h1>
 
 
         </div>
