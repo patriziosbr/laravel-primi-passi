@@ -74,3 +74,7 @@ Route::get('/news', function () {
     ];
     return view('news', $navLinks);
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
